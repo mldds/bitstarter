@@ -4,6 +4,8 @@ var htmlfile = "index.html";
 
 var app = express.createServer(express.logger());
 
+app.use(express.static(__dirname));
+
 app.get('/', function(request, response) {
     var html = fs.readFileSync('index.html').toString();
     response.send(html);
